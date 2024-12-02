@@ -13,8 +13,8 @@ import java.util.List;
 
 @RestController
 @RequestMapping(value = "/api/dog", produces = MediaType.APPLICATION_JSON_VALUE)
-//@ApiResponse(responseCode = "200", description = "Successful request")
-//@ApiResponse(responseCode = "500", description = "Internal server error")
+@ApiResponse(responseCode = "200", description = "Successful request")
+@ApiResponse(responseCode = "500", description = "Internal server error")
 public class DogController {
     private final DogService dogService;
 
