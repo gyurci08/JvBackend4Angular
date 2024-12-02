@@ -1,0 +1,7 @@
+POST http://localhost:8888/api/dog
+Content-Type: application/json
+
+{
+  "name": "asd"
+}
+

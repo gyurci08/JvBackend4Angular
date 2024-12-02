@@ -1,13 +1,12 @@
 package hu.jandzsogyorgy.spring_db_backend.controller;
 
 import hu.jandzsogyorgy.spring_db_backend.bean.DogDTO;
+import hu.jandzsogyorgy.spring_db_backend.bean.DogSaveDTO;
 import hu.jandzsogyorgy.spring_db_backend.service.DogService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -22,10 +21,18 @@ public class DogController {
         this.dogService = dogService;
     }
 
-
+    // List
     @GetMapping
     @Operation(summary = "All dogs", description = "List all dogs")
     public List<DogDTO> getAll() {
         return this.dogService.listAll();
     }
+
+    // Save
+    @PostMapping
+    public DogDTO create(@RequestBody DogSaveDTO request) {
+        return this.dogService.save(request);
+    }
+
+
 }
