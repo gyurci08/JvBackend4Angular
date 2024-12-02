@@ -6,6 +6,6 @@ import org.springframework.data.annotation.Id;
 @Data
 public class Dog {
     @Id
-    long Id;
-    String name;
+    private Long id;
+    private String name;
 }
